@@ -1,6 +1,7 @@
 #![deny(unsafe_code)]
 
-use tokio::{io::AsyncWriteExt, stream::StreamExt};
+use tokio::io::AsyncWriteExt;
+use futures::TryStreamExt;
 
 use std::{io, str, sync::Mutex};
 use warp::{http::Response, path, path::Tail, ws::WebSocket, Filter, Rejection, Reply};
